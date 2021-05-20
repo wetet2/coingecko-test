@@ -1,0 +1,44 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+KR:400,500,700');
+
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+
+   &:before,
+   &:after {
+      box-sizing: border-box;
+   }
+}
+
+html,
+body,
+button,
+input,
+select,
+pre,
+textarea {
+   font-family: 'Roboto', 'Noto Sans KR', 'malgun gothic', sans-serif;
+   font-size: 14px;
+}
+
+body{
+   overflow: overlay;
+}
+
+pre{
+   white-space: pre-wrap;
+}
+
+table {
+   table-layout: fixed;
+   border-collapse: collapse;
+}
+button{
+   cursor:pointer;
+   border: 0;
+   background: none;
+   outline: none;
+}

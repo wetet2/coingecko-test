@@ -1,0 +1,41 @@
+{
+   "name": "coingecko-test",
+   "version": "0.1.0",
+   "description": "CoinGecko API Test",
+   "main": "server/index.js",
+   "author": "Hoyoon Lee",
+   "license": "MIT",
+   "dependencies": {
+      "axios": "^0.21.1",
+      "classnames": "^2.3.1",
+      "express": "^4.17.1",
+      "react": "~16.8",
+      "react-dom": "^17.0.2",
+      "react-redux": "^7.2.4",
+      "react-router-dom": "^5.2.0",
+      "redux": "^4.1.0",
+      "styled-components": "^5.3.0"
+   },
+   "scripts": {
+      "start": "node server/index.js",
+      "start:dev": "node ./node_modules/nodemon/bin/nodemon server/index --watch server",
+      "build": "npx webpack --config webpack.config.js --mode production",
+      "build:dev": "npx webpack --config webpack.config.js --watch --mode development"
+   },
+   "devDependencies": {
+      "@babel/core": "^7.14.3",
+      "@babel/plugin-transform-runtime": "^7.14.3",
+      "@babel/preset-env": "^7.14.2",
+      "@babel/preset-react": "^7.13.13",
+      "babel-loader": "^8.2.2",
+      "css-loader": "^5.2.4",
+      "html-webpack-plugin": "^5.3.1",
+      "mini-css-extract-plugin": "^1.6.0",
+      "node-sass": "^6.0.0",
+      "nodemon": "^2.0.7",
+      "optimize-css-assets-webpack-plugin": "^6.0.0",
+      "sass-loader": "^11.1.1",
+      "webpack": "^5.37.0",
+      "webpack-cli": "^4.7.0"
+   }
+}
