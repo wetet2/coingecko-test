@@ -1,17 +1,18 @@
 import styled from 'styled-components';
 
 export const Header = styled.header`
-
    display: flex;
    align-items: center;
 
    img{
       max-height: 36px;
    }
+
    h3{
       flex: 1;
       font-size: 20px;
    }
+
    * + *{
       margin-left: 8px;
    }
@@ -24,22 +25,23 @@ export const InfoWrap = styled.div`
 `
 export const TableLeft = styled.table`
    flex: 1;
+
    th,td{
       padding: 12px;
       text-align: left;
       border: 1px solid #ccc;
    }
+
    th{
       background: #ddd;
       font-weight: 500;
    }
-   td{
 
-   }
 `
 
 export const TableRight = styled.table`
    flex: 1;
+
    th,td{
       text-align: left;
    }
@@ -83,6 +85,7 @@ export const Calc = styled.div`
       border: 1px solid #ccc;
       border-left: 0;
    }
+
    img{
       width: 60px;
       height: 25px;
@@ -107,13 +110,12 @@ export const DescArea = styled.div`
    align-items: center;
    justify-content: center;
    flex-direction: column;
-
    margin-top: 12px;
+
    > button{
       font-size: 16px;
       height: 40px;
       padding: 0 24px 0 12px;
-
       background: url(/images/arrow-down.svg) no-repeat right / 14px;
    }
 
@@ -122,10 +124,3 @@ export const DescArea = styled.div`
       border-top: 1px solid #ddd;
    }
 `
-export const c = styled.div`
-`
-export const d = styled.div`
-`
-export const e = styled.div`
-`
-

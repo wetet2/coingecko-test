@@ -9,7 +9,6 @@ import ListFilters from './common/ListFilters';
 import utils from '../utils';
 import * as S from './CoinDetailComponent.style';
 import * as C from './common/Common.style';
-import * as A from '../shared/Layout.style';
 import { PercentRenderer } from './common/CellRenderer';
 
 class CoinDetailComponent extends React.Component {
@@ -90,7 +89,6 @@ class CoinDetailComponent extends React.Component {
          descElement.style.display = 'none'
       }
    }
-
 
    onChangeTxtCoin = (evt) => {
       if (/^\d*(,\d*)*[.]?\d{0,8}$/g.test(evt.target.value)) {

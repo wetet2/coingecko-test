@@ -11,8 +11,6 @@ import ls from '../shared/localStorage';
 import Bookmark from './common/Bookmark';
 import { PercentRenderer, AmountRenderer } from './common/CellRenderer';
 import * as C from './common/Common.style';
-import * as A from '../shared/Layout.style';
-
 
 const customCellClass = ({ row, col, value }) => {
    let classes = [];

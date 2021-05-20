@@ -23,23 +23,24 @@ export const Loading = styled.div`
    left: 0;
    right: 0;
    bottom: 0;
-   background: rgba(0,0,0,.3);
-
+   
    display: none;
    align-items: center;
    justify-content: center;
 
+   background: rgba(0,0,0,.3);
    font-size: 40px;
    font-weight: 500;
    color: #fff;
-   opacity: 0;
+   
    transition: all .3s;
+   opacity: 0;
    z-index: 1;
-
    
    &.active{
       display: flex;
    }
+
    &.animate{
       opacity: 1;
    }
@@ -48,7 +49,7 @@ export const Loading = styled.div`
 
 export const More = styled.button`
    width: 100%;
-   background-color: #fff;
    height: 50px;
+   background-color: #fff;
    border-bottom: 1px solid #ddd;
 `;

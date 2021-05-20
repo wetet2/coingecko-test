@@ -73,13 +73,14 @@ class MarketsComponent extends React.Component {
    loadData = async (isMore) => {
       let { rowData } = this.state;
       if (!isMore) this.currentPage = 1;
+      
       let url = this.buildURL({
          currency: this.currentCurrency,
          perPage: this.currentPerPage,
          page: this.currentPage++
       });
-      const response = await ajax(url);
 
+      const response = await ajax(url);
       if (isMore) {
          rowData = rowData.concat(response.data);
       }

@@ -63,8 +63,6 @@ class ListFilters extends React.Component {
                </S.Select>
             }
          </S.Filters>
-
-
       )
    }
 }

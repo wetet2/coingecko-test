@@ -10,6 +10,7 @@ export const ToastWrap = styled.div`
    display: flex;
    align-items: flex-end;
    flex-direction: column-reverse;
+
    padding-right: 30px;
    z-index: 1;
 
@@ -20,15 +21,13 @@ export const ToastWrap = styled.div`
       width: 350px;
       min-height: 50px;
       margin-bottom: 12px;
-
       padding: 12px 32px 12px 16px;
       border-radius: 12px;
       background-color: #137cbd;
       box-shadow: 0 3px 5px rgba(0, 0, 0, .2);
-
-      color: #fff;
       font-size: 16px;
       font-weight: 500;
+      color: #fff;
       
       opacity: 0;
       transition: all .3s;
@@ -40,18 +39,13 @@ export const ToastWrap = styled.div`
          transform: translateY(0px);
       }
       &.shrink{
-         opacity: 0;
          min-height: 0;
          height: 0;
          padding-top: 0;
          padding-bottom: 0;
          margin: 0;
          color: transparent;
+         opacity: 0;
       }
-
    }
 `;
-
-export const Toast = styled.div`
-   
-`

@@ -24,9 +24,6 @@ class Table extends React.Component {
       this.refTable = React.createRef();
    }
 
-   componentDidMount() {
-   }
-
    tdClassName = (row, col) => {
       let classes = [];
       if (col.cellClass) {

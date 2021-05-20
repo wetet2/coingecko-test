@@ -11,20 +11,15 @@ import * as A from './Layout.style';
 
 class App extends React.Component {
 
-   constructor() {
-      super();
-   }
-
    render() {
       return (
          <>
             <BrowserRouter>
                <A.Layout>
-
+                  {/* 상단 메뉴 */}
                   <Menus />
                   <Suspense fallback={<div className="k-suspense"><div className="loader"></div></div>}>
                      <Switch>
-                        {/* <Route exact path={`/`} component={HomeComponent} /> */}
                         <Redirect exact path={'/'} to='/markets'></Redirect>
                         <Redirect exact path={'/coins'} to='/markets'></Redirect>
                         <Route path={`/markets`} component={MarketsComponent} />
@@ -32,7 +27,6 @@ class App extends React.Component {
                         <Route path={`/coins/:coinId`} component={CoinDetailComponent} />
                      </Switch>
                   </Suspense>
-                  
                </A.Layout>
             </BrowserRouter>
 

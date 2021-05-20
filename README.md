@@ -1,7 +1,7 @@
 ## Table of Contents
   - [Installing](#Installing)
-  - [Dependencies1](#Dependencies)
-  - [Project Folder Files](#Project-Folder-Files)
+  - [Dependencies](#Dependencies)
+  - [Project Folder & Files](#Project-Folder-&-File)
   - [Demo](#Demo)
 
 ## Installing
@@ -21,18 +21,22 @@ $ yarn
 ## Dependencies
 - axios
    - coinGecko와 통신하기 위해 사용
+
 - classnames
 	- class에 넣을 string을 편리하게 조합하기 위해 사용
+
 - react-redux, redux 
 	- global store를 이용하기 위해 사용(로딩화면, 토스트 등)
+
 - styled-components
 	- 편리하게 css를 관리하고 재사용성 높은 코드를 생산하기 위해 사용
+
 - 그외
 	- package.json 안에 devDependencies 패키지들은 babel & webpack 빌드를 위한 loader와 plugin들
 	- node-sass: webpack scss-loader에서 scss파일을 css로 변환하기 위해 사용
 	- nodemon: 파일 변경 시 자동 재시작 위해 사용(개발용)
 
-## Project Folder Files
+## Project Folder & Files
 
 - /package.json 
 	- 프로젝트 및 패키지 정의 파일

@@ -1,4 +1,6 @@
 export default {
+
+   // 3자리마다 콤마
    comma3Digits: (amount) => {
       let intAmount = amount.toString().replace(/,/g, '').split('.')[0];
       let decimalAmount = amount.toString().split('.')[1]
@@ -18,9 +20,11 @@ export default {
       }
       return nagative + result + decimalAmount;
    },
-   remove: (array, condition) => {
+
+   // Array에서 condition에 맞는 항목 삭제
+   remove: (array, conditionCallback) => {
       array.reverse().forEach((e, i) => {
-         if (condition(e)) {
+         if (conditionCallback(e) === true) {
             array.splice(i, 1);
          }
       });

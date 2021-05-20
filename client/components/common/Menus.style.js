@@ -8,11 +8,12 @@ export const MenuWrap = styled.div`
 export const Menu = styled.button`
    flex: 1;
    height: 50px;
+   color: #999;
    font-size: 18px;
    font-weight: 500;
    background-color: #eee;
-   color: #999;
-   box-shadow: 0px 3px 6px rgba(0,0,0,.25);
+   box-shadow: 0px 3px 6px rgba(0, 0, 0, .25);
+
    & + button{
       border-left: 0;
    }

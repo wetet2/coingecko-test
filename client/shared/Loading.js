@@ -26,6 +26,7 @@ class Loading extends React.Component {
       return <S.Loading ref={this.refLoading}>Loading</S.Loading>
    }
 }
+
 const mapStateToProps = ({ loading }) => ({
    showLoading: loading.show,
 })

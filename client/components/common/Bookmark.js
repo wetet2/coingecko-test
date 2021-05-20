@@ -9,7 +9,6 @@ import ls from '../../shared/localStorage';
 import { Keyword } from '../../shared/enum';
 import utils from '../../utils';
 
-
 class Bookmark extends React.Component {
 
    static propTypes = {
@@ -68,7 +67,6 @@ class Bookmark extends React.Component {
       )
    }
 }
-
 
 const matDispatchToProps = { addToast };
 export default connect(

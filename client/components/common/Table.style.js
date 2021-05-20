@@ -23,13 +23,14 @@ export const Table = styled.table`
          &.text-right{
             text-align: right;
          }
+
          &.text-center{
             text-align: center;
          }
-   
          
          &.clickable{
             cursor: pointer;
+            
             &:hover{
                text-decoration: underline;
             }

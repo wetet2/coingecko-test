@@ -10,7 +10,8 @@ export const Select = styled.select`
    border: 0;
    font-size: 14px;
    outline: none;
-   & + *{
+
+   & + * {
       margin-left: 12px;
    }
 `;
