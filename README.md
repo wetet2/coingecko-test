@@ -1,7 +1,7 @@
 ## Table of Contents
   - [Installing](#Installing)
   - [Dependencies](#Dependencies)
-  - [Project Folder & Files](#Project-Folder-&-File)
+  - [Project Folder & Files](#Project-Folder--File)
   - [Demo](#Demo)
 
 ## Installing
