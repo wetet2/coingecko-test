@@ -80,7 +80,8 @@ module.exports = (env, options) => {
       });
       config.plugins = [htmlwebpack].concat(config.plugins);
 
-   }else{
+   }
+   else{
 
       let htmlwebpack = new HtmlWebpackPlugin({
          filename: 'main.html',
