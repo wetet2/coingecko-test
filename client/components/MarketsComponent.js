@@ -35,7 +35,7 @@ class MarketsComponent extends React.Component {
             { header: '24H', field: 'price_change_percentage_24h_in_currency', width: '80px', cellRenderer: PercentRenderer, cellClass: customCellClass, cellStyle: { fontWeight: 500 }, headerStyle: { textAlign: 'right' } },
             { header: '7D', field: 'price_change_percentage_7d_in_currency', width: '80px', cellRenderer: PercentRenderer, cellClass: customCellClass, cellStyle: { fontWeight: 500 }, headerStyle: { textAlign: 'right' } },
             { header: '24H Volume', field: 'total_volume', cellRenderer: this.customAmountRenderer, cellClass: 'text-right', cellStyle: { fontWeight: 500 }, headerStyle: { textAlign: 'right' } },
-            { header: '', field: 'sparkline_in_7d', width: '100px', cellRenderer: this.customSparkline, cellStyle: { padding: 0, lineHeight: 0 } },
+            { header: 'Line in 7D', field: 'sparkline_in_7d', width: '100px', cellRenderer: this.customSparkline, cellStyle: { padding: 0, lineHeight: 0 } },
          ],
       }
    }

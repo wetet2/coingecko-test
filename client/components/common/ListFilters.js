@@ -29,9 +29,9 @@ class ListFilters extends React.Component {
    }
 
    render() {
-      const { hideView, hideCurrency, hidePerPage } = this.props;
+      const { hideView, hideCurrency, hidePerPage, style } = this.props;
       return (
-         <S.Filters>
+         <S.Filters style={style}>
             {
                !hideView &&
                <S.Select defaultValue={Filter.View.ALL} onChange={(evt) => this.props.onChange(Filter.Kind.VIEW, evt.target.value)}>

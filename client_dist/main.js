@@ -3082,18 +3082,19 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_8__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_9__);
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/esm/react-router.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/esm/react-router.js");
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
 /* harmony import */ var _reducer_toastReducer__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../reducer/toastReducer */ "./client/reducer/toastReducer.js");
 /* harmony import */ var _shared_enum__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../shared/enum */ "./client/shared/enum.js");
 /* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../utils */ "./client/utils/index.js");
 /* harmony import */ var _common_Table__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./common/Table */ "./client/components/common/Table.js");
-/* harmony import */ var _utils_ajax__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ../utils/ajax */ "./client/utils/ajax.js");
-/* harmony import */ var _shared_localStorage__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ../shared/localStorage */ "./client/shared/localStorage.js");
-/* harmony import */ var _common_Bookmark__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./common/Bookmark */ "./client/components/common/Bookmark.js");
-/* harmony import */ var _common_Sparkline__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./common/Sparkline */ "./client/components/common/Sparkline.js");
-/* harmony import */ var _common_CellRenderer__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./common/CellRenderer */ "./client/components/common/CellRenderer.js");
-/* harmony import */ var _common_Common_style__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./common/Common.style */ "./client/components/common/Common.style.js");
+/* harmony import */ var _common_ListFilters__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./common/ListFilters */ "./client/components/common/ListFilters.js");
+/* harmony import */ var _utils_ajax__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ../utils/ajax */ "./client/utils/ajax.js");
+/* harmony import */ var _shared_localStorage__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ../shared/localStorage */ "./client/shared/localStorage.js");
+/* harmony import */ var _common_Bookmark__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./common/Bookmark */ "./client/components/common/Bookmark.js");
+/* harmony import */ var _common_Sparkline__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./common/Sparkline */ "./client/components/common/Sparkline.js");
+/* harmony import */ var _common_CellRenderer__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./common/CellRenderer */ "./client/components/common/CellRenderer.js");
+/* harmony import */ var _common_Common_style__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./common/Common.style */ "./client/components/common/Common.style.js");
 
 
 
@@ -3107,6 +3108,7 @@ __webpack_require__.r(__webpack_exports__);
 function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = (0,_babel_runtime_helpers_getPrototypeOf__WEBPACK_IMPORTED_MODULE_6__.default)(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = (0,_babel_runtime_helpers_getPrototypeOf__WEBPACK_IMPORTED_MODULE_6__.default)(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return (0,_babel_runtime_helpers_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_5__.default)(this, result); }; }
 
 function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); return true; } catch (e) { return false; } }
+
 
 
 
@@ -3150,7 +3152,7 @@ var BookmarksComponent = /*#__PURE__*/function (_React$Component) {
     (0,_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_7__.default)((0,_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_3__.default)(_this), "customSparkline", function (_ref2) {
       var row = _ref2.row,
           value = _ref2.value;
-      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_9___default().createElement(_common_Sparkline__WEBPACK_IMPORTED_MODULE_18__.default, {
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_9___default().createElement(_common_Sparkline__WEBPACK_IMPORTED_MODULE_19__.default, {
         data: value.price,
         percentage7d: row.price_change_percentage_7d_in_currency
       });
@@ -3158,7 +3160,7 @@ var BookmarksComponent = /*#__PURE__*/function (_React$Component) {
 
     (0,_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_7__.default)((0,_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_3__.default)(_this), "cellRendererBookmark", function (_ref3) {
       var row = _ref3.row;
-      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_9___default().createElement(_common_Bookmark__WEBPACK_IMPORTED_MODULE_17__.default, {
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_9___default().createElement(_common_Bookmark__WEBPACK_IMPORTED_MODULE_18__.default, {
         coinInfo: row,
         onChange: _this.onChangeBookmark
       });
@@ -3184,9 +3186,9 @@ var BookmarksComponent = /*#__PURE__*/function (_React$Component) {
     });
 
     (0,_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_7__.default)((0,_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_3__.default)(_this), "customAmountRenderer", function (params) {
-      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_9___default().createElement(_common_Common_style__WEBPACK_IMPORTED_MODULE_20__.Currency, {
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_9___default().createElement(_common_Common_style__WEBPACK_IMPORTED_MODULE_21__.Currency, {
         currency: _shared_enum__WEBPACK_IMPORTED_MODULE_12__.Currency.KRW
-      }, (0,_common_CellRenderer__WEBPACK_IMPORTED_MODULE_19__.AmountRenderer)(params));
+      }, (0,_common_CellRenderer__WEBPACK_IMPORTED_MODULE_20__.AmountRenderer)(params));
     });
 
     (0,_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_7__.default)((0,_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_3__.default)(_this), "buildURL", function (_ref5) {
@@ -3203,20 +3205,21 @@ var BookmarksComponent = /*#__PURE__*/function (_React$Component) {
               rowData = _this.state.rowData;
               _this.currentPage = 1;
               url = _this.buildURL({
-                bookmarks: _shared_localStorage__WEBPACK_IMPORTED_MODULE_16__.default.getItem(_shared_enum__WEBPACK_IMPORTED_MODULE_12__.Keyword.BOOKMARK) || []
+                bookmarks: _shared_localStorage__WEBPACK_IMPORTED_MODULE_17__.default.getItem(_shared_enum__WEBPACK_IMPORTED_MODULE_12__.Keyword.BOOKMARK) || []
               });
               _context.next = 5;
-              return (0,_utils_ajax__WEBPACK_IMPORTED_MODULE_15__.default)(url);
+              return (0,_utils_ajax__WEBPACK_IMPORTED_MODULE_16__.default)(url);
 
             case 5:
               response = _context.sent;
               rowData = response.data;
+              console.log(1111, rowData);
 
               _this.setState({
                 rowData: rowData
               });
 
-            case 8:
+            case 9:
             case "end":
               return _context.stop();
           }
@@ -3261,7 +3264,7 @@ var BookmarksComponent = /*#__PURE__*/function (_React$Component) {
         header: '1H',
         field: 'price_change_percentage_1h_in_currency',
         width: '80px',
-        cellRenderer: _common_CellRenderer__WEBPACK_IMPORTED_MODULE_19__.PercentRenderer,
+        cellRenderer: _common_CellRenderer__WEBPACK_IMPORTED_MODULE_20__.PercentRenderer,
         cellClass: customCellClass,
         cellStyle: {
           fontWeight: 500
@@ -3273,7 +3276,7 @@ var BookmarksComponent = /*#__PURE__*/function (_React$Component) {
         header: '24H',
         field: 'price_change_percentage_24h_in_currency',
         width: '80px',
-        cellRenderer: _common_CellRenderer__WEBPACK_IMPORTED_MODULE_19__.PercentRenderer,
+        cellRenderer: _common_CellRenderer__WEBPACK_IMPORTED_MODULE_20__.PercentRenderer,
         cellClass: customCellClass,
         cellStyle: {
           fontWeight: 500
@@ -3285,7 +3288,7 @@ var BookmarksComponent = /*#__PURE__*/function (_React$Component) {
         header: '7D',
         field: 'price_change_percentage_7d_in_currency',
         width: '80px',
-        cellRenderer: _common_CellRenderer__WEBPACK_IMPORTED_MODULE_19__.PercentRenderer,
+        cellRenderer: _common_CellRenderer__WEBPACK_IMPORTED_MODULE_20__.PercentRenderer,
         cellClass: customCellClass,
         cellStyle: {
           fontWeight: 500
@@ -3305,7 +3308,7 @@ var BookmarksComponent = /*#__PURE__*/function (_React$Component) {
           textAlign: 'right'
         }
       }, {
-        header: '',
+        header: 'Line in 7D',
         field: 'sparkline_in_7d',
         width: '100px',
         cellRenderer: _this.customSparkline,
@@ -3314,7 +3317,7 @@ var BookmarksComponent = /*#__PURE__*/function (_React$Component) {
           lineHeight: 0
         }
       }],
-      bookmarks: _shared_localStorage__WEBPACK_IMPORTED_MODULE_16__.default.getItem(_shared_enum__WEBPACK_IMPORTED_MODULE_12__.Keyword.BOOKMARK) || []
+      bookmarks: _shared_localStorage__WEBPACK_IMPORTED_MODULE_17__.default.getItem(_shared_enum__WEBPACK_IMPORTED_MODULE_12__.Keyword.BOOKMARK) || []
     };
     return _this;
   }
@@ -3330,10 +3333,17 @@ var BookmarksComponent = /*#__PURE__*/function (_React$Component) {
       var _this$state = this.state,
           colDef = _this$state.colDef,
           rowData = _this$state.rowData;
-      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_9___default().createElement(_common_Table__WEBPACK_IMPORTED_MODULE_14__.default, {
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_9___default().createElement((react__WEBPACK_IMPORTED_MODULE_9___default().Fragment), null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_9___default().createElement(_common_ListFilters__WEBPACK_IMPORTED_MODULE_15__.default, {
+        style: {
+          visibility: 'hidden'
+        }
+      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_9___default().createElement(_common_Table__WEBPACK_IMPORTED_MODULE_14__.default, {
         colDef: colDef,
-        rowData: rowData
-      });
+        rowData: rowData,
+        style: {
+          marginTop: 12
+        }
+      }));
     }
   }]);
 
@@ -3343,7 +3353,7 @@ var BookmarksComponent = /*#__PURE__*/function (_React$Component) {
 var matDispatchToProps = {
   addToast: _reducer_toastReducer__WEBPACK_IMPORTED_MODULE_11__.addToast
 };
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ((0,react_redux__WEBPACK_IMPORTED_MODULE_10__.connect)(null, matDispatchToProps)((0,react_router_dom__WEBPACK_IMPORTED_MODULE_21__.withRouter)(BookmarksComponent))); // export default withRouter(BookmarksComponent);
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ((0,react_redux__WEBPACK_IMPORTED_MODULE_10__.connect)(null, matDispatchToProps)((0,react_router_dom__WEBPACK_IMPORTED_MODULE_22__.withRouter)(BookmarksComponent))); // export default withRouter(BookmarksComponent);
 
 /***/ }),
 
@@ -3964,7 +3974,7 @@ var MarketsComponent = /*#__PURE__*/function (_React$Component) {
           textAlign: 'right'
         }
       }, {
-        header: '',
+        header: 'Line in 7D',
         field: 'sparkline_in_7d',
         width: '100px',
         cellRenderer: _this.customSparkline,
@@ -4339,8 +4349,11 @@ var ListFilters = /*#__PURE__*/function (_React$Component) {
       var _this$props = this.props,
           hideView = _this$props.hideView,
           hideCurrency = _this$props.hideCurrency,
-          hidePerPage = _this$props.hidePerPage;
-      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_6___default().createElement(_ListFilters_style__WEBPACK_IMPORTED_MODULE_8__.Filters, null, !hideView && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_6___default().createElement(_ListFilters_style__WEBPACK_IMPORTED_MODULE_8__.Select, {
+          hidePerPage = _this$props.hidePerPage,
+          style = _this$props.style;
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_6___default().createElement(_ListFilters_style__WEBPACK_IMPORTED_MODULE_8__.Filters, {
+        style: style
+      }, !hideView && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_6___default().createElement(_ListFilters_style__WEBPACK_IMPORTED_MODULE_8__.Select, {
         defaultValue: _shared_enum__WEBPACK_IMPORTED_MODULE_9__.Filter.View.ALL,
         onChange: function onChange(evt) {
           return _this.props.onChange(_shared_enum__WEBPACK_IMPORTED_MODULE_9__.Filter.Kind.VIEW, evt.target.value);
@@ -4532,8 +4545,8 @@ __webpack_require__.r(__webpack_exports__);
 var _templateObject, _templateObject2;
 
 
-var MenuWrap = styled_components__WEBPACK_IMPORTED_MODULE_1__.default.div(_templateObject || (_templateObject = (0,_babel_runtime_helpers_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__.default)(["\n   display: flex;\n   padding: 0 0 24px 0;\n"])));
-var Menu = styled_components__WEBPACK_IMPORTED_MODULE_1__.default.button(_templateObject2 || (_templateObject2 = (0,_babel_runtime_helpers_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__.default)(["\n   flex: 1;\n   height: 50px;\n   color: #999;\n   font-size: 18px;\n   font-weight: 500;\n   background-color: #eee;\n   box-shadow: 0px 3px 6px rgba(0, 0, 0, .25);\n\n   & + button{\n      border-left: 0;\n   }\n   &.active{\n      background-color: #fff;\n      color: #333;\n   }\n"])));
+var MenuWrap = styled_components__WEBPACK_IMPORTED_MODULE_1__.default.div(_templateObject || (_templateObject = (0,_babel_runtime_helpers_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__.default)(["\n   display: flex;\n   padding: 12px 0 24px 0;\n"])));
+var Menu = styled_components__WEBPACK_IMPORTED_MODULE_1__.default.button(_templateObject2 || (_templateObject2 = (0,_babel_runtime_helpers_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__.default)(["\n   // flex: 1;\n   // height: 50px;\n   color: #999;\n   font-size: 18px;\n   font-weight: 500;\n   // background-color: #eee;\n   // box-shadow: 0px 3px 6px rgba(0, 0, 0, .25);\n\n   & + button{\n      border-left: 0;\n      margin-left: 24px;\n   }\n   &.active{\n      background-color: #fff;\n      color: #333;\n   }\n"])));
 
 /***/ }),
 
@@ -4559,12 +4572,16 @@ var _templateObject;
 
 
 var Canvas = styled_components__WEBPACK_IMPORTED_MODULE_2__.default.canvas(_templateObject || (_templateObject = (0,_babel_runtime_helpers_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__.default)(["\n   width: 100%;\n   height: 48px;\n\n   // width: 150px;\n   // height: 150px;\n   // border: 1px solid gold;\n"])));
+var EXCHANGE = 1116.59;
 
 var Sparkline = function Sparkline(_ref) {
   var data = _ref.data,
       percentage7d = _ref.percentage7d;
   var refCanvas = (0,react__WEBPACK_IMPORTED_MODULE_1__.useRef)();
   (0,react__WEBPACK_IMPORTED_MODULE_1__.useEffect)(function () {
+    var dataArr = data.map(function (e) {
+      return e * EXCHANGE;
+    });
     var canvas = refCanvas.current;
     var style = getComputedStyle(canvas);
     canvas.width = parseInt(style.width.replace('px', ''));
@@ -4574,8 +4591,8 @@ var Sparkline = function Sparkline(_ref) {
     var h = canvas.height;
     var min;
     var max = 0;
-    var xTick = w / (data.length + 2);
-    data.forEach(function (e) {
+    var xTick = w / (dataArr.length + 2);
+    dataArr.forEach(function (e) {
       if (!min || e < min) min = e;
       if (e > max) max = e;
     });
@@ -4583,10 +4600,10 @@ var Sparkline = function Sparkline(_ref) {
     max = Math.round(max * 1.1);
     ctx.strokeStyle = percentage7d > 0 ? 'rgba(220,38,38,1)' : 'rgba(37,99,235,1)';
 
-    for (var i = 0; i < data.length; i++) {
-      if (i === data.length - 1) continue;
-      var c1 = data[i];
-      var c2 = data[i + 1];
+    for (var i = 0; i < dataArr.length; i++) {
+      if (i === dataArr.length - 1) continue;
+      var c1 = dataArr[i];
+      var c2 = dataArr[i + 1];
       var y1 = Math.round((max - c1) / (max - min) * h);
       var y2 = Math.round((max - c2) / (max - min) * h);
       ctx.beginPath();

@@ -6,6 +6,8 @@ import { addToast } from '../reducer/toastReducer';
 import { Currency, Keyword } from '../shared/enum';
 import utils from '../utils';
 import Table from './common/Table';
+import ListFilters from './common/ListFilters';
+
 import ajax from '../utils/ajax';
 import ls from '../shared/localStorage';
 import Bookmark from './common/Bookmark';
@@ -35,7 +37,7 @@ class BookmarksComponent extends React.Component {
             { header: '24H', field: 'price_change_percentage_24h_in_currency', width: '80px', cellRenderer: PercentRenderer, cellClass: customCellClass, cellStyle: { fontWeight: 500 }, headerStyle: { textAlign: 'right' } },
             { header: '7D', field: 'price_change_percentage_7d_in_currency', width: '80px', cellRenderer: PercentRenderer, cellClass: customCellClass, cellStyle: { fontWeight: 500 }, headerStyle: { textAlign: 'right' } },
             { header: '24H Volume', field: 'total_volume', cellRenderer: this.customAmountRenderer, cellClass: 'text-right', cellStyle: { fontWeight: 500 }, headerStyle: { textAlign: 'right' } },
-            { header: '', field: 'sparkline_in_7d', width: '100px', cellRenderer: this.customSparkline, cellStyle: { padding: 0, lineHeight: 0 } },
+            { header: 'Line in 7D', field: 'sparkline_in_7d', width: '100px', cellRenderer: this.customSparkline, cellStyle: { padding: 0, lineHeight: 0 } },
          ],
          bookmarks: ls.getItem(Keyword.BOOKMARK) || [],
       }
@@ -91,6 +93,7 @@ class BookmarksComponent extends React.Component {
       const response = await ajax(url);
 
       rowData = response.data;
+      console.log(1111, rowData);
       this.setState({
          rowData
       })
@@ -99,7 +102,10 @@ class BookmarksComponent extends React.Component {
    render() {
       const { colDef, rowData } = this.state;
       return (
-         <Table colDef={colDef} rowData={rowData}></Table>
+         <>
+            <ListFilters style={{ visibility: 'hidden' }} />
+            <Table colDef={colDef} rowData={rowData} style={{ marginTop: 12 }}></Table>
+         </>
       )
    }
 }

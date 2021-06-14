@@ -11,12 +11,16 @@ const Canvas = styled.canvas`
    // border: 1px solid gold;
 `;
 
+let EXCHANGE = 1116.59;
 
 
 const Sparkline = ({ data, percentage7d }) => {
    const refCanvas = useRef();
 
    useEffect(() => {
+
+      let dataArr = data.map(e => e * EXCHANGE);
+      
       let canvas = refCanvas.current;
       let style = getComputedStyle(canvas);
       canvas.width = parseInt(style.width.replace('px', ''));
@@ -28,9 +32,9 @@ const Sparkline = ({ data, percentage7d }) => {
 
       let min;
       let max = 0;
-      let xTick = w / (data.length + 2);
+      let xTick = w / (dataArr.length + 2);
 
-      data.forEach(e => {
+      dataArr.forEach(e => {
          if (!min || e < min) min = e;
          if (e > max) max = e;
       })
@@ -38,13 +42,13 @@ const Sparkline = ({ data, percentage7d }) => {
       max = Math.round(max * 1.1);
 
       ctx.strokeStyle = percentage7d > 0 ? 'rgba(220,38,38,1)' : 'rgba(37,99,235,1)';
-      for (let i = 0; i < data.length; i++) {
-         if (i === data.length - 1) continue;
-         let c1 = data[i];
-         let c2 = data[i + 1];
+      for (let i = 0; i < dataArr.length; i++) {
+         if (i === dataArr.length - 1) continue;
+         let c1 = dataArr[i];
+         let c2 = dataArr[i + 1];
          let y1 = Math.round((max - c1) / (max - min) * h);
          let y2 = Math.round((max - c2) / (max - min) * h);
-
+         
          ctx.beginPath();
          ctx.moveTo((i + 1) * xTick, y1);
          ctx.lineTo((i + 2) * xTick, y2);
