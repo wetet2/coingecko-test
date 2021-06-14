@@ -92,7 +92,6 @@ class MarketsComponent extends React.Component {
       else {
          rowData = response.data;
       }
-      console.log(1111, rowData[0]);
       this.setState({
          rowData
       })

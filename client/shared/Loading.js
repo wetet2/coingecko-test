@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import * as S from '../components/common/Common.style';
+import * as S from './Loading.style';
 
 class Loading extends React.Component {
 
@@ -23,7 +23,7 @@ class Loading extends React.Component {
       }
    }
    render() {
-      return <S.Loading ref={this.refLoading}>Loading</S.Loading>
+      return <S.Loading ref={this.refLoading}><S.LoadingInner /></S.Loading>
    }
 }
 

@@ -93,7 +93,6 @@ class BookmarksComponent extends React.Component {
       const response = await ajax(url);
 
       rowData = response.data;
-      console.log(1111, rowData);
       this.setState({
          rowData
       })
@@ -103,7 +102,7 @@ class BookmarksComponent extends React.Component {
       const { colDef, rowData } = this.state;
       return (
          <>
-            <ListFilters style={{ visibility: 'hidden' }} />
+            <ListFilters style={{ visibility: 'hidden' }} onChange={() => {}}/>
             <Table colDef={colDef} rowData={rowData} style={{ marginTop: 12 }}></Table>
          </>
       )
