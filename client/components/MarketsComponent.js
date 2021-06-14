@@ -9,9 +9,9 @@ import ls from '../shared/localStorage';
 import Table from './common/Table';
 import ListFilters from './common/ListFilters';
 import Bookmark from './common/Bookmark';
+import Sparkline from './common/Sparkline';
 import { PercentRenderer, AmountRenderer } from './common/CellRenderer';
 import * as C from './common/Common.style';
-
 
 const customCellClass = ({ row, col, value }) => {
    let classes = [];
@@ -30,11 +30,12 @@ class MarketsComponent extends React.Component {
             { header: '', field: '', width: '50px', cellRenderer: this.cellRendererBookmark, cellClass: 'text-center' },
             { header: '자산', field: 'name', width: 'auto', onClick: this.onClickCell, cellStyle: { fontWeight: 500 } },
             { header: '', field: 'symbol', width: '70px' },
-            { header: 'Price', field: 'current_price', cellRenderer: this.customAmountRenderer, cellClass: 'text-right', cellStyle: { fontWeight: 500 }, headerStyle: {textAlign: 'right'} },
-            { header: '1H', field: 'price_change_percentage_1h_in_currency', width: '80px', cellRenderer: PercentRenderer, cellClass: customCellClass, cellStyle: { fontWeight: 500 }, headerStyle: {textAlign: 'right'} },
-            { header: '24H', field: 'price_change_percentage_24h_in_currency', width: '80px', cellRenderer: PercentRenderer, cellClass: customCellClass, cellStyle: { fontWeight: 500 }, headerStyle: {textAlign: 'right'} },
-            { header: '7D', field: 'price_change_percentage_7d_in_currency', width: '80px', cellRenderer: PercentRenderer, cellClass: customCellClass, cellStyle: { fontWeight: 500 }, headerStyle: {textAlign: 'right'} },
-            { header: '24H Volume', field: 'total_volume', cellRenderer: this.customAmountRenderer, cellClass: 'text-right', cellStyle: { fontWeight: 500 }, headerStyle: {textAlign: 'right'} },
+            { header: 'Price', field: 'current_price', cellRenderer: this.customAmountRenderer, cellClass: 'text-right', cellStyle: { fontWeight: 500 }, headerStyle: { textAlign: 'right' } },
+            { header: '1H', field: 'price_change_percentage_1h_in_currency', width: '80px', cellRenderer: PercentRenderer, cellClass: customCellClass, cellStyle: { fontWeight: 500 }, headerStyle: { textAlign: 'right' } },
+            { header: '24H', field: 'price_change_percentage_24h_in_currency', width: '80px', cellRenderer: PercentRenderer, cellClass: customCellClass, cellStyle: { fontWeight: 500 }, headerStyle: { textAlign: 'right' } },
+            { header: '7D', field: 'price_change_percentage_7d_in_currency', width: '80px', cellRenderer: PercentRenderer, cellClass: customCellClass, cellStyle: { fontWeight: 500 }, headerStyle: { textAlign: 'right' } },
+            { header: '24H Volume', field: 'total_volume', cellRenderer: this.customAmountRenderer, cellClass: 'text-right', cellStyle: { fontWeight: 500 }, headerStyle: { textAlign: 'right' } },
+            { header: '', field: 'sparkline_in_7d', width: '100px', cellRenderer: this.customSparkline, cellStyle: { padding: 0, lineHeight: 0 } },
          ],
       }
    }
@@ -47,6 +48,9 @@ class MarketsComponent extends React.Component {
       this.loadData();
    }
 
+   customSparkline = ({ row, value }) => {
+      return <Sparkline data={value.price} percentage7d={row.price_change_percentage_7d_in_currency}></Sparkline>
+   }
    customAmountRenderer = (params) => {
       return <C.Currency currency={this.currentCurrency}>{AmountRenderer(params)}</C.Currency>
    }
@@ -60,20 +64,21 @@ class MarketsComponent extends React.Component {
    }
 
    buildURL = (params = {}) => {
-      return [
-         `https://api.coingecko.com/api/v3/coins/markets?`,
-         `vs_currency=${params.currency}&`,
-         `order=market_cap_desc&`,
-         `per_page=${params.perPage}&`,
-         `page=${params.page}&`,
-         `sparkline=false&`,
-         `price_change_percentage=1h%2C24h%2C7d`].join('');
+      return `https://api.coingecko.com/api/v3/coins/markets?` + ([
+         `vs_currency=${params.currency}`,
+         // `ids=bitcoin`,
+         `order=market_cap_desc`,
+         `per_page=${params.perPage}`,
+         `page=${params.page}`,
+         `sparkline=true`,
+         `price_change_percentage=1h%2C24h%2C7d`
+      ].join('&'));
    }
 
    loadData = async (isMore) => {
       let { rowData } = this.state;
       if (!isMore) this.currentPage = 1;
-      
+
       let url = this.buildURL({
          currency: this.currentCurrency,
          perPage: this.currentPerPage,
@@ -87,6 +92,7 @@ class MarketsComponent extends React.Component {
       else {
          rowData = response.data;
       }
+      console.log(1111, rowData[0]);
       this.setState({
          rowData
       })
@@ -123,7 +129,7 @@ class MarketsComponent extends React.Component {
       return (
          <>
             <ListFilters onChange={this.onChangeFilter} />
-            <Table colDef={colDef} rowData={rowData} style={{marginTop: 12}}></Table>
+            <Table colDef={colDef} rowData={rowData} style={{ marginTop: 12 }}></Table>
             <C.More onClick={this.onClickMore}>더보기</C.More>
          </>
       )

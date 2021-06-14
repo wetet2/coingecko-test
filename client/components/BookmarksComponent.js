@@ -9,6 +9,7 @@ import Table from './common/Table';
 import ajax from '../utils/ajax';
 import ls from '../shared/localStorage';
 import Bookmark from './common/Bookmark';
+import Sparkline from './common/Sparkline';
 import { PercentRenderer, AmountRenderer } from './common/CellRenderer';
 import * as C from './common/Common.style';
 
@@ -34,6 +35,7 @@ class BookmarksComponent extends React.Component {
             { header: '24H', field: 'price_change_percentage_24h_in_currency', width: '80px', cellRenderer: PercentRenderer, cellClass: customCellClass, cellStyle: { fontWeight: 500 }, headerStyle: { textAlign: 'right' } },
             { header: '7D', field: 'price_change_percentage_7d_in_currency', width: '80px', cellRenderer: PercentRenderer, cellClass: customCellClass, cellStyle: { fontWeight: 500 }, headerStyle: { textAlign: 'right' } },
             { header: '24H Volume', field: 'total_volume', cellRenderer: this.customAmountRenderer, cellClass: 'text-right', cellStyle: { fontWeight: 500 }, headerStyle: { textAlign: 'right' } },
+            { header: '', field: 'sparkline_in_7d', width: '100px', cellRenderer: this.customSparkline, cellStyle: { padding: 0, lineHeight: 0 } },
          ],
          bookmarks: ls.getItem(Keyword.BOOKMARK) || [],
       }
@@ -41,6 +43,10 @@ class BookmarksComponent extends React.Component {
 
    componentDidMount() {
       this.loadData();
+   }
+
+   customSparkline = ({ row, value }) => {
+      return <Sparkline data={value.price} percentage7d={row.price_change_percentage_7d_in_currency}></Sparkline>
    }
 
    cellRendererBookmark = ({ row }) => {
@@ -72,7 +78,7 @@ class BookmarksComponent extends React.Component {
          `order=market_cap_desc&`,
          `per_page=${bookmarks.length}&`,
          `page=1&`,
-         `sparkline=false&`,
+         `sparkline=true&`,
          `price_change_percentage=1h%2C24h%2C7d`].join('');
    }
 
