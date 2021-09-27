@@ -22,7 +22,12 @@ app.use((err, req, res, next) => {
 })
 
 app.listen(port, () => {
-   console.log(`[Server] is listening to port ${port}`);
+   console.log();
+   console.log('Entrance:');
+   console.log('┌─────────────────────────────────────────┐');
+   console.log('│      Local: http://localhost:3000       │');
+   console.log('└─────────────────────────────────────────┘');
+
 });
 
 
