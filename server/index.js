@@ -23,11 +23,11 @@ app.use((err, req, res, next) => {
 
 app.listen(port, () => {
    console.log();
-   console.log('Entrance:');
+   console.log('\x1b[33m%s\x1b[0m', 'Entrance:');
    console.log('┌─────────────────────────────────────────┐');
-   console.log('│      Local: http://localhost:3000       │');
+   console.log('│      Local: \x1b[36m%s\x1b[0m       │', 'http://localhost:3000');
    console.log('└─────────────────────────────────────────┘');
-
 });
+
 
 
