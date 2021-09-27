@@ -1,6 +1,48 @@
 /******/ (() => { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
+/***/ "./node_modules/@babel/runtime/helpers/esm/arrayLikeToArray.js":
+/*!*********************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/esm/arrayLikeToArray.js ***!
+  \*********************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ _arrayLikeToArray)
+/* harmony export */ });
+function _arrayLikeToArray(arr, len) {
+  if (len == null || len > arr.length) len = arr.length;
+
+  for (var i = 0, arr2 = new Array(len); i < len; i++) {
+    arr2[i] = arr[i];
+  }
+
+  return arr2;
+}
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime/helpers/esm/arrayWithoutHoles.js":
+/*!**********************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/esm/arrayWithoutHoles.js ***!
+  \**********************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ _arrayWithoutHoles)
+/* harmony export */ });
+/* harmony import */ var _arrayLikeToArray_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./arrayLikeToArray.js */ "./node_modules/@babel/runtime/helpers/esm/arrayLikeToArray.js");
+
+function _arrayWithoutHoles(arr) {
+  if (Array.isArray(arr)) return (0,_arrayLikeToArray_js__WEBPACK_IMPORTED_MODULE_0__.default)(arr);
+}
+
+/***/ }),
+
 /***/ "./node_modules/@babel/runtime/helpers/esm/assertThisInitialized.js":
 /*!**************************************************************************!*\
   !*** ./node_modules/@babel/runtime/helpers/esm/assertThisInitialized.js ***!
@@ -249,6 +291,40 @@ function _inheritsLoose(subClass, superClass) {
 
 /***/ }),
 
+/***/ "./node_modules/@babel/runtime/helpers/esm/iterableToArray.js":
+/*!********************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/esm/iterableToArray.js ***!
+  \********************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ _iterableToArray)
+/* harmony export */ });
+function _iterableToArray(iter) {
+  if (typeof Symbol !== "undefined" && iter[Symbol.iterator] != null || iter["@@iterator"] != null) return Array.from(iter);
+}
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime/helpers/esm/nonIterableSpread.js":
+/*!**********************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/esm/nonIterableSpread.js ***!
+  \**********************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ _nonIterableSpread)
+/* harmony export */ });
+function _nonIterableSpread() {
+  throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
+}
+
+/***/ }),
+
 /***/ "./node_modules/@babel/runtime/helpers/esm/objectSpread2.js":
 /*!******************************************************************!*\
   !*** ./node_modules/@babel/runtime/helpers/esm/objectSpread2.js ***!
@@ -437,6 +513,31 @@ function _taggedTemplateLiteral(strings, raw) {
 
 /***/ }),
 
+/***/ "./node_modules/@babel/runtime/helpers/esm/toConsumableArray.js":
+/*!**********************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/esm/toConsumableArray.js ***!
+  \**********************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ _toConsumableArray)
+/* harmony export */ });
+/* harmony import */ var _arrayWithoutHoles_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./arrayWithoutHoles.js */ "./node_modules/@babel/runtime/helpers/esm/arrayWithoutHoles.js");
+/* harmony import */ var _iterableToArray_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./iterableToArray.js */ "./node_modules/@babel/runtime/helpers/esm/iterableToArray.js");
+/* harmony import */ var _unsupportedIterableToArray_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./unsupportedIterableToArray.js */ "./node_modules/@babel/runtime/helpers/esm/unsupportedIterableToArray.js");
+/* harmony import */ var _nonIterableSpread_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./nonIterableSpread.js */ "./node_modules/@babel/runtime/helpers/esm/nonIterableSpread.js");
+
+
+
+
+function _toConsumableArray(arr) {
+  return (0,_arrayWithoutHoles_js__WEBPACK_IMPORTED_MODULE_0__.default)(arr) || (0,_iterableToArray_js__WEBPACK_IMPORTED_MODULE_1__.default)(arr) || (0,_unsupportedIterableToArray_js__WEBPACK_IMPORTED_MODULE_2__.default)(arr) || (0,_nonIterableSpread_js__WEBPACK_IMPORTED_MODULE_3__.default)();
+}
+
+/***/ }),
+
 /***/ "./node_modules/@babel/runtime/helpers/esm/typeof.js":
 /*!***********************************************************!*\
   !*** ./node_modules/@babel/runtime/helpers/esm/typeof.js ***!
@@ -462,6 +563,30 @@ function _typeof(obj) {
   }
 
   return _typeof(obj);
+}
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime/helpers/esm/unsupportedIterableToArray.js":
+/*!*******************************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/esm/unsupportedIterableToArray.js ***!
+  \*******************************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ _unsupportedIterableToArray)
+/* harmony export */ });
+/* harmony import */ var _arrayLikeToArray_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./arrayLikeToArray.js */ "./node_modules/@babel/runtime/helpers/esm/arrayLikeToArray.js");
+
+function _unsupportedIterableToArray(o, minLen) {
+  if (!o) return;
+  if (typeof o === "string") return (0,_arrayLikeToArray_js__WEBPACK_IMPORTED_MODULE_0__.default)(o, minLen);
+  var n = Object.prototype.toString.call(o).slice(8, -1);
+  if (n === "Object" && o.constructor) n = o.constructor.name;
+  if (n === "Map" || n === "Set") return Array.from(o);
+  if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return (0,_arrayLikeToArray_js__WEBPACK_IMPORTED_MODULE_0__.default)(o, minLen);
 }
 
 /***/ }),
@@ -3717,7 +3842,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_8__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_9__);
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/esm/react-router.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/esm/react-router.js");
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
 /* harmony import */ var _reducer_toastReducer__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../reducer/toastReducer */ "./client/reducer/toastReducer.js");
 /* harmony import */ var _utils_ajax__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../utils/ajax */ "./client/utils/ajax.js");
@@ -3727,8 +3852,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _common_ListFilters__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./common/ListFilters */ "./client/components/common/ListFilters.js");
 /* harmony import */ var _common_Bookmark__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./common/Bookmark */ "./client/components/common/Bookmark.js");
 /* harmony import */ var _common_Sparkline__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./common/Sparkline */ "./client/components/common/Sparkline.js");
-/* harmony import */ var _common_CellRenderer__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./common/CellRenderer */ "./client/components/common/CellRenderer.js");
-/* harmony import */ var _common_Common_style__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./common/Common.style */ "./client/components/common/Common.style.js");
+/* harmony import */ var _common_SparklineSvg__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./common/SparklineSvg */ "./client/components/common/SparklineSvg.js");
+/* harmony import */ var _common_CellRenderer__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./common/CellRenderer */ "./client/components/common/CellRenderer.js");
+/* harmony import */ var _common_Common_style__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./common/Common.style */ "./client/components/common/Common.style.js");
 
 
 
@@ -3742,6 +3868,7 @@ __webpack_require__.r(__webpack_exports__);
 function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = (0,_babel_runtime_helpers_getPrototypeOf__WEBPACK_IMPORTED_MODULE_6__.default)(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = (0,_babel_runtime_helpers_getPrototypeOf__WEBPACK_IMPORTED_MODULE_6__.default)(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return (0,_babel_runtime_helpers_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_5__.default)(this, result); }; }
 
 function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); return true; } catch (e) { return false; } }
+
 
 
 
@@ -3797,21 +3924,31 @@ var MarketsComponent = /*#__PURE__*/function (_React$Component) {
       });
     });
 
-    (0,_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_7__.default)((0,_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_3__.default)(_this), "customAmountRenderer", function (params) {
-      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_9___default().createElement(_common_Common_style__WEBPACK_IMPORTED_MODULE_20__.Currency, {
-        currency: _this.currentCurrency
-      }, (0,_common_CellRenderer__WEBPACK_IMPORTED_MODULE_19__.AmountRenderer)(params));
+    (0,_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_7__.default)((0,_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_3__.default)(_this), "customSparkline2", function (_ref3) {
+      var row = _ref3.row,
+          value = _ref3.value;
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_9___default().createElement(_common_SparklineSvg__WEBPACK_IMPORTED_MODULE_19__.default, {
+        id: row.id,
+        data: value.price,
+        percentage7d: row.price_change_percentage_7d_in_currency
+      });
     });
 
-    (0,_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_7__.default)((0,_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_3__.default)(_this), "cellRendererBookmark", function (_ref3) {
-      var row = _ref3.row;
+    (0,_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_7__.default)((0,_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_3__.default)(_this), "customAmountRenderer", function (params) {
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_9___default().createElement(_common_Common_style__WEBPACK_IMPORTED_MODULE_21__.Currency, {
+        currency: _this.currentCurrency
+      }, (0,_common_CellRenderer__WEBPACK_IMPORTED_MODULE_20__.AmountRenderer)(params));
+    });
+
+    (0,_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_7__.default)((0,_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_3__.default)(_this), "cellRendererBookmark", function (_ref4) {
+      var row = _ref4.row;
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_9___default().createElement(_common_Bookmark__WEBPACK_IMPORTED_MODULE_17__.default, {
         coinInfo: row
       });
     });
 
-    (0,_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_7__.default)((0,_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_3__.default)(_this), "onClickCell", function (_ref4) {
-      var row = _ref4.row;
+    (0,_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_7__.default)((0,_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_3__.default)(_this), "onClickCell", function (_ref5) {
+      var row = _ref5.row;
 
       _this.props.history.push("/coins/".concat(row['id']));
     });
@@ -3819,11 +3956,12 @@ var MarketsComponent = /*#__PURE__*/function (_React$Component) {
     (0,_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_7__.default)((0,_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_3__.default)(_this), "buildURL", function () {
       var params = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
       return "https://api.coingecko.com/api/v3/coins/markets?" + ["vs_currency=".concat(params.currency), // `ids=bitcoin`,
-      "order=market_cap_desc", "per_page=".concat(params.perPage), "page=".concat(params.page), "sparkline=true", "price_change_percentage=1h%2C24h%2C7d"].join('&');
+      "order=market_cap_desc", // `per_page=${params.perPage}`,
+      "per_page=".concat(50), "page=".concat(params.page), "sparkline=true", "price_change_percentage=1h%2C24h%2C7d"].join('&');
     });
 
     (0,_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_7__.default)((0,_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_3__.default)(_this), "loadData", /*#__PURE__*/function () {
-      var _ref5 = (0,_babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_0__.default)( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_8___default().mark(function _callee(isMore) {
+      var _ref6 = (0,_babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_0__.default)( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_8___default().mark(function _callee(isMore) {
         var rowData, url, response;
         return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_8___default().wrap(function _callee$(_context) {
           while (1) {
@@ -3861,7 +3999,7 @@ var MarketsComponent = /*#__PURE__*/function (_React$Component) {
       }));
 
       return function (_x) {
-        return _ref5.apply(this, arguments);
+        return _ref6.apply(this, arguments);
       };
     }());
 
@@ -3928,7 +4066,7 @@ var MarketsComponent = /*#__PURE__*/function (_React$Component) {
         header: '1H',
         field: 'price_change_percentage_1h_in_currency',
         width: '80px',
-        cellRenderer: _common_CellRenderer__WEBPACK_IMPORTED_MODULE_19__.PercentRenderer,
+        cellRenderer: _common_CellRenderer__WEBPACK_IMPORTED_MODULE_20__.PercentRenderer,
         cellClass: customCellClass,
         cellStyle: {
           fontWeight: 500
@@ -3940,7 +4078,7 @@ var MarketsComponent = /*#__PURE__*/function (_React$Component) {
         header: '24H',
         field: 'price_change_percentage_24h_in_currency',
         width: '80px',
-        cellRenderer: _common_CellRenderer__WEBPACK_IMPORTED_MODULE_19__.PercentRenderer,
+        cellRenderer: _common_CellRenderer__WEBPACK_IMPORTED_MODULE_20__.PercentRenderer,
         cellClass: customCellClass,
         cellStyle: {
           fontWeight: 500
@@ -3952,7 +4090,7 @@ var MarketsComponent = /*#__PURE__*/function (_React$Component) {
         header: '7D',
         field: 'price_change_percentage_7d_in_currency',
         width: '80px',
-        cellRenderer: _common_CellRenderer__WEBPACK_IMPORTED_MODULE_19__.PercentRenderer,
+        cellRenderer: _common_CellRenderer__WEBPACK_IMPORTED_MODULE_20__.PercentRenderer,
         cellClass: customCellClass,
         cellStyle: {
           fontWeight: 500
@@ -3971,11 +4109,12 @@ var MarketsComponent = /*#__PURE__*/function (_React$Component) {
         headerStyle: {
           textAlign: 'right'
         }
-      }, {
+      }, // { header: 'Line in 7D', field: 'sparkline_in_7d', width: '200px', cellRenderer: this.customSparkline, cellStyle: { padding: 0, lineHeight: 0 } },
+      {
         header: 'Line in 7D',
         field: 'sparkline_in_7d',
-        width: '100px',
-        cellRenderer: _this.customSparkline,
+        width: '200px',
+        cellRenderer: _this.customSparkline2,
         cellStyle: {
           padding: 0,
           lineHeight: 0
@@ -4013,7 +4152,7 @@ var MarketsComponent = /*#__PURE__*/function (_React$Component) {
         style: {
           marginTop: 12
         }
-      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_9___default().createElement(_common_Common_style__WEBPACK_IMPORTED_MODULE_20__.More, {
+      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_9___default().createElement(_common_Common_style__WEBPACK_IMPORTED_MODULE_21__.More, {
         onClick: this.onClickMore
       }, "\uB354\uBCF4\uAE30"));
     }
@@ -4025,7 +4164,7 @@ var MarketsComponent = /*#__PURE__*/function (_React$Component) {
 var matDispatchToProps = {
   addToast: _reducer_toastReducer__WEBPACK_IMPORTED_MODULE_11__.addToast
 };
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ((0,react_redux__WEBPACK_IMPORTED_MODULE_10__.connect)(null, matDispatchToProps)((0,react_router_dom__WEBPACK_IMPORTED_MODULE_21__.withRouter)(MarketsComponent)));
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ((0,react_redux__WEBPACK_IMPORTED_MODULE_10__.connect)(null, matDispatchToProps)((0,react_router_dom__WEBPACK_IMPORTED_MODULE_22__.withRouter)(MarketsComponent)));
 
 /***/ }),
 
@@ -4614,6 +4753,84 @@ var Sparkline = function Sparkline(_ref) {
 };
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Sparkline);
+
+/***/ }),
+
+/***/ "./client/components/common/SparklineSvg.js":
+/*!**************************************************!*\
+  !*** ./client/components/common/SparklineSvg.js ***!
+  \**************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _babel_runtime_helpers_toConsumableArray__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/toConsumableArray */ "./node_modules/@babel/runtime/helpers/esm/toConsumableArray.js");
+/* harmony import */ var _babel_runtime_helpers_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/taggedTemplateLiteral */ "./node_modules/@babel/runtime/helpers/esm/taggedTemplateLiteral.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
+
+
+
+var _templateObject, _templateObject2, _templateObject3;
+
+
+
+var StyleSvg = styled_components__WEBPACK_IMPORTED_MODULE_3__.default.svg(_templateObject || (_templateObject = (0,_babel_runtime_helpers_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_1__.default)(["\n   position: relative;\n   transform: rotateX(180deg);\n   width: 200px;\n   height: 48px;\n\n   transition: all .3s;\n   &:hover{\n      // transform: rotateX(180deg) scale(1.5);\n      z-index: 1;\n\n      polyline{\n         stroke-width: 2px;       \n      }\n   }\n"])));
+var StylePolyline = styled_components__WEBPACK_IMPORTED_MODULE_3__.default.polyline(_templateObject2 || (_templateObject2 = (0,_babel_runtime_helpers_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_1__.default)(["\n   stroke-width: 1px; \n   fill: none;\n   transition: all .3s;\n  \n"])));
+var StylePolygon = styled_components__WEBPACK_IMPORTED_MODULE_3__.default.polygon(_templateObject3 || (_templateObject3 = (0,_babel_runtime_helpers_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_1__.default)(["\n   stroke: transparent;\n"])));
+var standardNumber = 1000;
+
+var Sparkline2 = function Sparkline2(_ref) {
+  var id = _ref.id,
+      data = _ref.data,
+      percentage7d = _ref.percentage7d;
+  var min = Math.min.apply(Math, (0,_babel_runtime_helpers_toConsumableArray__WEBPACK_IMPORTED_MODULE_0__.default)(data));
+  var plist = data.map(function (e) {
+    return e * (standardNumber / min);
+  });
+  var minInList = Math.min.apply(Math, (0,_babel_runtime_helpers_toConsumableArray__WEBPACK_IMPORTED_MODULE_0__.default)(plist));
+  var filtered = plist.filter(function (e, i) {
+    return i % 1 === 0;
+  }).map(function (e) {
+    return e - minInList;
+  });
+  var linePoints = filtered.map(function (e, i) {
+    return "".concat(i, ",").concat(e);
+  });
+  var max = Math.max.apply(Math, (0,_babel_runtime_helpers_toConsumableArray__WEBPACK_IMPORTED_MODULE_0__.default)(filtered));
+  var color = percentage7d > 0 ? 'rgba(220,38,38,1)' : 'rgba(37,99,235,1)';
+  var backColor = percentage7d > 0 ? 'rgb(255 178 178 / 30%)' : 'rgb(145 179 253 / 30%)';
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default().createElement(StyleSvg, {
+    viewBox: "0 0 ".concat(filtered.length, " ").concat(max),
+    preserveAspectRatio: "none"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default().createElement("defs", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default().createElement("linearGradient", {
+    id: "grad_".concat(id),
+    x2: "0",
+    y2: "1"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default().createElement("stop", {
+    offset: "0",
+    stopColor: "#fff"
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default().createElement("stop", {
+    offset: "1",
+    stopColor: backColor
+  }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default().createElement(StylePolyline, {
+    points: linePoints.join(' '),
+    style: {
+      stroke: color
+    }
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default().createElement(StylePolygon, {
+    points: "0,0 ".concat(linePoints, " ").concat(filtered.length, ",0 "),
+    style: {
+      fill: "url(#".concat("grad_".concat(id), ")")
+    }
+  }));
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Sparkline2);
 
 /***/ }),
 

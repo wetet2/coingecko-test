@@ -10,6 +10,7 @@ import Table from './common/Table';
 import ListFilters from './common/ListFilters';
 import Bookmark from './common/Bookmark';
 import Sparkline from './common/Sparkline';
+import SparklineSvg from './common/SparklineSvg';
 import { PercentRenderer, AmountRenderer } from './common/CellRenderer';
 import * as C from './common/Common.style';
 
@@ -35,7 +36,8 @@ class MarketsComponent extends React.Component {
             { header: '24H', field: 'price_change_percentage_24h_in_currency', width: '80px', cellRenderer: PercentRenderer, cellClass: customCellClass, cellStyle: { fontWeight: 500 }, headerStyle: { textAlign: 'right' } },
             { header: '7D', field: 'price_change_percentage_7d_in_currency', width: '80px', cellRenderer: PercentRenderer, cellClass: customCellClass, cellStyle: { fontWeight: 500 }, headerStyle: { textAlign: 'right' } },
             { header: '24H Volume', field: 'total_volume', cellRenderer: this.customAmountRenderer, cellClass: 'text-right', cellStyle: { fontWeight: 500 }, headerStyle: { textAlign: 'right' } },
-            { header: 'Line in 7D', field: 'sparkline_in_7d', width: '100px', cellRenderer: this.customSparkline, cellStyle: { padding: 0, lineHeight: 0 } },
+            // { header: 'Line in 7D', field: 'sparkline_in_7d', width: '200px', cellRenderer: this.customSparkline, cellStyle: { padding: 0, lineHeight: 0 } },
+            { header: 'Line in 7D', field: 'sparkline_in_7d', width: '200px', cellRenderer: this.customSparkline2, cellStyle: { padding: 0, lineHeight: 0 } },
          ],
       }
    }
@@ -50,6 +52,9 @@ class MarketsComponent extends React.Component {
 
    customSparkline = ({ row, value }) => {
       return <Sparkline data={value.price} percentage7d={row.price_change_percentage_7d_in_currency}></Sparkline>
+   }
+   customSparkline2 = ({ row, value }) => {
+      return <SparklineSvg id={row.id} data={value.price} percentage7d={row.price_change_percentage_7d_in_currency}></SparklineSvg>
    }
    customAmountRenderer = (params) => {
       return <C.Currency currency={this.currentCurrency}>{AmountRenderer(params)}</C.Currency>
@@ -68,7 +73,8 @@ class MarketsComponent extends React.Component {
          `vs_currency=${params.currency}`,
          // `ids=bitcoin`,
          `order=market_cap_desc`,
-         `per_page=${params.perPage}`,
+         // `per_page=${params.perPage}`,
+         `per_page=${50}`,
          `page=${params.page}`,
          `sparkline=true`,
          `price_change_percentage=1h%2C24h%2C7d`
