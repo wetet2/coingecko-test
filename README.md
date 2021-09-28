@@ -1,16 +1,16 @@
 # CoinGecko API Test
 
-To install packages,
+First, install packages,
 ```bash
 $ yarn
 ```
 
-To build,
+and build.
 ```bash
 $ yarn build
 ```
 
-To start server,
+Then start server,
 ```bash
 $ yarn start
 ```
