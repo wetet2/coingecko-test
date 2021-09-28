@@ -1,7 +1,7 @@
 {
-   "name": "coingecko-test",
+   "name": "hoyoon-coin-board",
    "version": "0.1.0",
-   "description": "CoinGecko API Test",
+   "description": "Hoyoon's Coin Board",
    "main": "server/index.js",
    "author": "Hoyoon Lee",
    "license": "MIT",

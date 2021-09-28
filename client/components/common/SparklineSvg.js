@@ -1,6 +1,7 @@
 import React, { useRef, useEffect, useState, createRef } from "react";
 
 import styled from "styled-components";
+
 const StyleSvg = styled.svg`
   position: relative;
   transform: rotateX(180deg);
@@ -27,7 +28,8 @@ const StylePolygon = styled.polygon`
 `;
 
 const standardNumber = 1000;
-const Sparkline2 = ({ id, data, percentage7d }) => {
+
+const SparklineSvg = ({ id, data, percentage7d }) => {
   let min = Math.min(...data);
   let plist = data.map((e) => e * (standardNumber / min));
   let minInList = Math.min(...plist);
@@ -62,4 +64,4 @@ const Sparkline2 = ({ id, data, percentage7d }) => {
   );
 };
 
-export default Sparkline2;
+export default SparklineSvg;

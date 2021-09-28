@@ -1,7 +1,6 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const OptimizeCssAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 
 let config = {
   entry: {
@@ -43,12 +42,6 @@ let config = {
     new MiniCssExtractPlugin({
       filename: "[name].css",
       chunkFilename: "[name]_bundle.css",
-    }),
-    new OptimizeCssAssetsPlugin({
-      assetNameRegExp: /\.css$/,
-      cssProcessorPluginOptions: {
-        preset: ["default", { discardComments: { removeAll: true } }],
-      },
     }),
   ],
 };

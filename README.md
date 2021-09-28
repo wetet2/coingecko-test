@@ -1,4 +1,4 @@
-# CoinGecko API Test
+# Coin Dashboard using CoinGecko API
 
 First, install packages,
 ```bash
