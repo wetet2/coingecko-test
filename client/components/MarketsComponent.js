@@ -85,7 +85,13 @@ class MarketsComponent extends React.Component {
           cellStyle: { fontWeight: 500 },
           headerStyle: { textAlign: "right" },
         },
-        // { header: 'Line in 7D', field: 'sparkline_in_7d', width: '200px', cellRenderer: this.customSparkline, cellStyle: { padding: 0, lineHeight: 0 } },
+        // {
+        //   header: "Line in 7D",
+        //   field: "sparkline_in_7d",
+        //   width: "200px",
+        //   cellRenderer: this.customSparkline,
+        //   cellStyle: { padding: 0, lineHeight: 0 },
+        // },
         {
           header: "Line in 7D",
           field: "sparkline_in_7d",

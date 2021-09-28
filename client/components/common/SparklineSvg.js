@@ -2,19 +2,21 @@ import React, { useRef, useEffect, useState, createRef } from "react";
 
 import styled from "styled-components";
 
+const svgWidth = 190;
+const svgHeight = 40;
+
 const StyleSvg = styled.svg`
   position: relative;
   transform: rotateX(180deg);
-  width: 188px;
-  height: 40px;
+  width: ${svgWidth}px;
+  height: ${svgHeight}px;
 
   transition: all 0.3s;
   &:hover {
-    // transform: rotateX(180deg) scale(1.5);
     z-index: 1;
 
     polyline {
-      stroke-width: 2px;
+      stroke-width: 3px;
     }
   }
 `;
@@ -27,26 +29,43 @@ const StylePolygon = styled.polygon`
   stroke: transparent;
 `;
 
-const standardNumber = 1000;
+const interpolateArray = (data, fitCount) => {
+  const linearInterpolate = (before, after, atPoint) =>
+    before + (after - before) * atPoint;
+
+  const newData = new Array();
+  const springFactor = new Number((data.length - 1) / (fitCount - 1));
+  newData[0] = data[0];
+  for (var i = 1; i < fitCount - 1; i++) {
+    var tmp = i * springFactor;
+    var before = new Number(Math.floor(tmp)).toFixed();
+    var after = new Number(Math.ceil(tmp)).toFixed();
+    var atPoint = tmp - before;
+    newData[i] = linearInterpolate(data[before], data[after], atPoint);
+  }
+  newData[fitCount - 1] = data[data.length - 1];
+  return newData;
+};
 
 const SparklineSvg = ({ id, data, percentage7d }) => {
-  let min = Math.min(...data);
-  let plist = data.map((e) => e * (standardNumber / min));
-  let minInList = Math.min(...plist);
+  const min = Math.min(...data);
+  const max = Math.max(...data);
+  const divideVal = (max - min) / svgHeight;
+  let plist = data.map((e) => (e - min) / divideVal);
 
-  const filtered = plist
-    .filter((e, i) => i % 1 === 0)
-    .map((e) => e - minInList);
-  const linePoints = filtered.map((e, i) => `${i},${e}`);
-  const max = Math.max(...filtered);
+  let filtered = plist.filter((e, i) => i % 3 === 0);
+  filtered = interpolateArray(filtered, svgWidth);
+  const viewWidth = filtered.length;
+  const linePoints = filtered.map((e, i) => `${i},${e}`).join(" ");
 
-  const color = percentage7d > 0 ? "rgba(220,38,38,1)" : "rgba(37,99,235,1)";
+  const lineColor =
+    percentage7d > 0 ? "rgba(220,38,38,1)" : "rgba(37,99,235,1)";
   const backColor =
     percentage7d > 0 ? "rgb(255 178 178 / 30%)" : "rgb(145 179 253 / 30%)";
 
   return (
     <StyleSvg
-      viewBox={`0 0 ${filtered.length} ${max}`}
+      viewBox={`0 0 ${viewWidth} ${svgHeight}`}
       preserveAspectRatio="none"
     >
       <defs>
@@ -55,9 +74,9 @@ const SparklineSvg = ({ id, data, percentage7d }) => {
           <stop offset="1" stopColor={backColor} />
         </linearGradient>
       </defs>
-      <StylePolyline points={linePoints.join(" ")} style={{ stroke: color }} />
+      <StylePolyline points={linePoints} style={{ stroke: lineColor }} />
       <StylePolygon
-        points={`0,0 ${linePoints} ${filtered.length},0 `}
+        points={`0,0 ${linePoints} ${viewWidth},0 `}
         style={{ fill: `url(#${`grad_${id}`})` }}
       />
     </StyleSvg>
