@@ -7,16 +7,15 @@ const svgHeight = 40;
 
 const StyleSvg = styled.svg`
   position: relative;
-  transform: rotateX(180deg);
   width: ${svgWidth}px;
   height: ${svgHeight}px;
+  transform: rotateX(180deg);
 
   transition: all 0.3s;
   &:hover {
     z-index: 1;
-
     polyline {
-      stroke-width: 3px;
+      stroke-width: 2px;
     }
   }
 `;
@@ -53,7 +52,7 @@ const SparklineSvg = ({ id, data, percentage7d }) => {
   const divideVal = (max - min) / svgHeight;
   let plist = data.map((e) => (e - min) / divideVal);
 
-  let filtered = plist.filter((e, i) => i % 3 === 0);
+  let filtered = plist.filter((e, i) => i % 1 === 0);
   filtered = interpolateArray(filtered, svgWidth);
   const viewWidth = filtered.length;
   const linePoints = filtered.map((e, i) => `${i},${e}`).join(" ");
@@ -61,13 +60,10 @@ const SparklineSvg = ({ id, data, percentage7d }) => {
   const lineColor =
     percentage7d > 0 ? "rgba(220,38,38,1)" : "rgba(37,99,235,1)";
   const backColor =
-    percentage7d > 0 ? "rgb(255 178 178 / 30%)" : "rgb(145 179 253 / 30%)";
+    percentage7d > 0 ? "rgb(255 178 178 / 70%)" : "rgb(145 179 253 / 70%)";
 
   return (
-    <StyleSvg
-      viewBox={`0 0 ${viewWidth} ${svgHeight}`}
-      preserveAspectRatio="none"
-    >
+    <StyleSvg viewBox={`0 0 ${viewWidth} ${svgHeight}`}>
       <defs>
         <linearGradient id={`grad_${id}`} x2="0" y2="1">
           <stop offset="0" stopColor="#fff" />

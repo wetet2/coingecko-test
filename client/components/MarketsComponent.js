@@ -2,6 +2,7 @@ import React from "react";
 import { withRouter } from "react-router-dom";
 import { connect } from "react-redux";
 import { addToast } from "../store/toastReducer";
+import { get } from "lodash/fp";
 
 import ajax from "../utils/ajax";
 import { Filter, Keyword, Currency } from "../shared/enum";
@@ -13,6 +14,7 @@ import Sparkline from "./common/Sparkline";
 import SparklineSvg from "./common/SparklineSvg";
 import { PercentRenderer, AmountRenderer } from "./common/CellRenderer";
 import * as C from "./common/Common.style";
+import NivoLine from "./common/NivoLine";
 
 const customCellClass = ({ row, col, value }) => {
   let classes = [];
@@ -96,7 +98,7 @@ class MarketsComponent extends React.Component {
           header: "Line in 7D",
           field: "sparkline_in_7d",
           width: "200px",
-          cellRenderer: this.customSparkline2,
+          cellRenderer: this.customSparklineSvg,
           cellStyle: { padding: 0, lineHeight: 0, textAlign: "center" },
         },
       ],
@@ -119,7 +121,7 @@ class MarketsComponent extends React.Component {
       ></Sparkline>
     );
   };
-  customSparkline2 = ({ row, value }) => {
+  customSparklineSvg = ({ row, value }) => {
     return (
       <SparklineSvg
         id={row.id}
@@ -218,6 +220,13 @@ class MarketsComponent extends React.Component {
           style={{ marginTop: 12 }}
         ></Table>
         <C.More onClick={this.onClickMore}>더보기</C.More>
+
+        {rowData && (
+          <>
+            <h4 style={{ marginTop: 40 }}>Nivo Line test</h4>
+            <NivoLine data={get("sparkline_in_7d.price")(rowData?.[0])} />
+          </>
+        )}
       </>
     );
   }
